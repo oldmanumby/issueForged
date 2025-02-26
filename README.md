@@ -6,7 +6,7 @@ A simple yet powerful Python utility that converts Markdown files, specifically 
 
 ## Overview
 
-issuePhorge is designed to streamline the process of converting structured Markdown documents into formal issues in your Git repository. It's particularly useful for teams who plan in Markdown and want to seamlessly transfer their planning documents into actionable tasks in their issue tracking system then onto their projects feature in Git.
+issuePhorge is designed to streamline the process of converting structured Markdown documents into formal issues in your Git repository where they can be added to your projects. It's particularly useful for teams who plan in Markdown and want to seamlessly transfer their planning documents into actionable tasks in their issue tracking system then onto their projects feature in Git.
 
 ## Features
 
