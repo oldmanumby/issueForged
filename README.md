@@ -2,7 +2,7 @@
 
 # issuePhorge
 
-A simple yet powerful Python utility that converts Markdown files, specifically outline or task lists, into Gitea/GitHub Issues, then onto Git Project as needed.
+A simple yet powerful Python utility that converts Markdown files, specifically outline or task lists, into Gitea/GitHub Issues, then onto Git Projects as needed.
 
 ## Overview
 
