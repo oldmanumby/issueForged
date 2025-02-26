@@ -1,3 +1,5 @@
+![issuePhorge](issuePhorge.png)
+
 # issuePhorge
 
 A simple yet powerful Python utility that converts Markdown task lists into Gitea/GitHub issues.
