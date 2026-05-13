@@ -122,20 +122,15 @@ When creating multiple issues, issuePhorge asks for confirmation every few issue
 - **Label Not Found**: Check that the label name exactly matches one in your repository
 - **Unexpected Formatting**: View the issue in TEST MODE before creating all issues
 
-## License
 
-issuePhorge is licensed under the GNU General Public License v3.0 (GPL-3.0). This means you can freely use, modify, and distribute this software, provided that:
 
-1. You disclose the source code of your modifications
-2. You license your modifications under the same GPL-3.0 license
-3. You preserve the original copyright notices and disclaimers
+---
 
-See the LICENSE file for the complete text of the GPL-3.0 license.
+**License**
 
-## Contributing
+Licensed under the GNU General Public License v3.0 (GPL-3.0). This means you can freely use, modify, and distribute this software, provided that:
 
-Contributions are welcome! Feel free to open issues or submit pull requests on the project repository.
-
-## Acknowledgments
-
-issuePhorge was created to simplify the workflow of converting planning documents into actionable issues. Special thanks to all who contributed to its development and testing.
+- You disclose the source code of your modifications
+- You license your modifications under the same GPL-3.0 license
+- You preserve the original copyright notices and disclaimers
+- See the LICENSE file for the complete text of the GPL-3.0 license.
