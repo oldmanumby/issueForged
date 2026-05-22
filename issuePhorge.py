@@ -1,4 +1,23 @@
 #!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
+"""
+issuePhorge
+
+A simple yet powerful Python utility that converts Markdown files, specifically 
+outline or task lists, into Gitea/GitHub Issues, then onto Git Projects as needed.
+
+Website: https://code.oldmanumby.com
+"""
+
+author = "B.A. Umberger (Old Man Umby)"
+copyright = "Copyright 2026, B.A. Umberger"
+credits = ["B.A. Umberger"]
+license = "GPL-3.0"
+version = "1.0.0"
+maintainer = "B.A. Umberger"
+status = "Production"
+
 import re
 import json
 import subprocess
@@ -233,7 +252,7 @@ def configure():
     print("\nEnter the markdown file path and name...")
     
     # Input file
-    input_file = input(f"Markdown file path [{config['input_file']}]: ").strip()
+    input_file = input(f"Markdown file path [{config['input_file']}]:\n> ").strip()
     if input_file:
         config['input_file'] = input_file
     
@@ -254,7 +273,7 @@ def configure():
         
         # Get the section pattern
         print("\nWhich header levels do you wish to use as the issue titles? Everything else between these headers will be sent to the body of the issue. Higher header levels will be ignored...")
-        header_level = input(f"Desired header level (1-6) [header 2 is default]: ").strip()
+        header_level = input(f"Desired header level (1-6) [header 2 is default]:\n> ").strip()
         
         if header_level and header_level.isdigit() and 1 <= int(header_level) <= 6:
             config['section_pattern'] = '#' * int(header_level)
@@ -265,19 +284,19 @@ def configure():
     
     # Repo API URL
     print("\nEnter the complete URL that points directly to the Issues API Endpoint for your specific repository, not just the base URL of the Git service. This endpoint is where POST requests will be sent to create new issues...")
-    repo_api_url = input(f"Repository API URL: ").strip()
+    repo_api_url = input(f"Repository API URL:\n> ").strip()
     if repo_api_url:
         config['repo_api_url'] = repo_api_url
     
     # Token
     print("\nEnter the complete API Token for your Git/repo service...")
-    token = input(f"API Token (press ENTER to keep existing config): ").strip()
+    token = input(f"API Token (press ENTER to keep existing config):\n> ").strip()
     if token:
         config['token'] = token
     
     # Ignore patterns
     print("\nIf you wish for issuePhorge to ignore specific headers based on patterns, enter those below...")
-    ignore_patterns = input(f"Desired header patterns to ignore (comma-separated) [{config.get('ignore_patterns', '# My_Sample_Header,# Another_Ignored_Header')}]: ").strip()
+    ignore_patterns = input(f"Desired header patterns to ignore (comma-separated) [{config.get('ignore_patterns', '# My_Sample_Header,# Another_Ignored_Header')}]:\n> ").strip()
     if ignore_patterns:
         config['ignore_patterns'] = ignore_patterns
     
@@ -285,7 +304,7 @@ def configure():
     print("\nEnter any additional issue parameters...")
     
     # Assignee
-    assignee = input(f"Issue Assignee: ").strip()
+    assignee = input(f"Issue Assignee:\n> ").strip()
     if assignee:
         config['assignee'] = assignee
     
@@ -311,7 +330,7 @@ def configure():
         print(f"Could not fetch labels: {e}")
     
     # Label name
-    label_name = input(f"\nLabel Name [current: {config.get('label_name', '')}]: ").strip()
+    label_name = input(f"\nLabel Name [current: {config.get('label_name', '')}]:\n> ").strip()
     if label_name:
         config['label_name'] = label_name
     
@@ -333,7 +352,7 @@ def main():
     print("2. Select options manually")
     print("3. Exit")
     
-    choice = input("\nEnter the config option (1-3): ")
+    choice = input("\nEnter the config option (1-3):\n> ")
     
     config = None
     if choice == "1":
@@ -372,7 +391,7 @@ def main():
     print("3. FINIKY MODE: Choose which header/issues to create")
     print("4. Exit")
     
-    mode_choice = input("\nEnter your choice (1-4): ")
+    mode_choice = input("\nEnter your choice (1-4):\n> ")
     
     if mode_choice == "1":
         # Test mode - create only the first issue
@@ -384,7 +403,7 @@ def main():
         print(f"\n{title}")
         print("\n" + body)
         
-        response = input("\nCreate this issue? (y/n): ")
+        response = input("\nCreate this issue? (y/n):\n> ")
         if response.lower() != 'y':
             print("Aborted")
             return
@@ -407,7 +426,7 @@ def main():
             
             # Ask to continue every 2 issues
             if success_count % 2 == 0 and success_count < section_count:
-                response = input(f"\nCreated {success_count} of {section_count} issues. Continue? (y/n): ")
+                response = input(f"\nCreated {success_count} of {section_count} issues. Continue? (y/n):\n> ")
                 if response.lower() != 'y':
                     print("Stopped by user")
                     break
@@ -421,7 +440,7 @@ def main():
         for i, title in enumerate(section_titles, 1):
             print(f"{i}. {title}")
         
-        selections = input("\nEnter headers to convert to issues (comma-separated, e.g. 1,3): ")
+        selections = input("\nEnter headers to convert to issues (comma-separated, e.g. 1,3):\n> ")
         try:
             indices = [int(idx.strip()) - 1 for idx in selections.split(',')]
             selected_titles = [section_titles[idx] for idx in indices if 0 <= idx < len(section_titles)]
@@ -430,8 +449,7 @@ def main():
                 print("No valid sections selected.")
                 return
             
-            print(f"\nI'm ready to create issues. Proceed? (y/n): ")
-            response = input()
+            response = input(f"\nI'm ready to create issues. Proceed? (y/n):\n> ")
             if response.lower() != 'y':
                 print("Aborted")
                 return
