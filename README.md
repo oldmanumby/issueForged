@@ -6,7 +6,7 @@ A simple yet powerful Python utility that converts Markdown files, specifically 
 
 ## Overview
 
-issuePhorge is designed to streamline the process of converting structured Markdown documents into formal issues in your Git repository where they can be added to your projects. It's particularly useful for teams who plan in Markdown and want to seamlessly transfer their planning documents into actionable tasks in their issue tracking system then onto their projects feature in Git.
+issueForged is designed to streamline the process of converting structured Markdown documents into formal issues in your Git repository where they can be added to your projects. It's particularly useful for teams who plan in Markdown and want to seamlessly transfer their planning documents into actionable tasks in their issue tracking system then onto their projects feature in Git.
 
 ![Screenshot](screenshot.png)
 
@@ -35,7 +35,7 @@ issuePhorge is designed to streamline the process of converting structured Markd
 
 ## Configuration
 
-When you first run issuePhorge, you'll be prompted to configure the following settings:
+When you first run issueForged, you'll be prompted to configure the following settings:
 
 1. **Input File**: Path to your Markdown file containing tasks.
 2. **Header Level**: Which header level to use for issue titles (e.g., H1, H2, H3, etc.).
@@ -97,7 +97,7 @@ Here is a preview of the interactive terminal prompts you will see when configur
 ```
 ::: issueForged :::
 
-This simple Python script converts the headers (#, ##, ###, etc.) in a GitHub-flavored markdown file into Gitea/GitHub issues. If this is your first time using issuePhorge, your selected options will create a config file for future use: Option 1 below; otherwise, choose Option 2...
+This simple Python script converts the headers (#, ##, ###, etc.) in a GitHub-flavored markdown file into Gitea/GitHub issues. If this is your first time using issueForged, your selected options will create a config file for future use: Option 1 below; otherwise, choose Option 2...
 
 Config Options:
 1. Use existing configuration

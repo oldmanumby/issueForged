@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 """
-issuePhorge
+issueForged
 
 A simple yet powerful Python utility that converts Markdown files, specifically 
 outline or task lists, into Gitea/GitHub Issues, then onto Git Projects as needed.
@@ -27,7 +27,7 @@ import configparser
 import sys
 
 # Configuration file
-CONFIG_FILE = 'issuePhorge.conf'
+CONFIG_FILE = 'issueForged.conf'
 
 def save_config(config):
     """Save configuration to file"""
@@ -295,7 +295,7 @@ def configure():
         config['token'] = token
     
     # Ignore patterns
-    print("\nIf you wish for issuePhorge to ignore specific headers based on patterns, enter those below...")
+    print("\nIf you wish for issueForged to ignore specific headers based on patterns, enter those below...")
     ignore_patterns = input(f"Desired header patterns to ignore (comma-separated) [{config.get('ignore_patterns', '# My_Sample_Header,# Another_Ignored_Header')}]:\n> ").strip()
     if ignore_patterns:
         config['ignore_patterns'] = ignore_patterns
@@ -344,8 +344,8 @@ def configure():
     return config
 
 def main():
-    print("::: issuePhorge :::")
-    print("\nThis simple Python script converts the headers (#, ##, ###, etc.) in a GitHub-flavored markdown file into Gitea/GitHub issues. If this is your first time using issuePhorge, your selected options will create a config file for future use: Option 1 below; otherwise, choose Option 2...")
+    print("::: issueForged :::")
+    print("\nThis simple Python script converts the headers (#, ##, ###, etc.) in a GitHub-flavored markdown file into Gitea/GitHub issues. If this is your first time using issueForged, your selected options will create a config file for future use: Option 1 below; otherwise, choose Option 2...")
     
     print("\nConfig Options:")
     print("1. Use existing configuration")
