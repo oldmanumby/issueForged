@@ -1,6 +1,6 @@
-![Apps rePhorged](Apps_rePhorged.png)
+![Apps-rePhorged-Logo](Apps-reForged.png)
 
-# issuePhorge
+# issueForged
 
 A simple yet powerful Python utility that converts Markdown files, specifically outline or task lists, into Gitea/GitHub Issues, then onto Git Projects as needed.
 
@@ -19,7 +19,7 @@ issuePhorge is designed to streamline the process of converting structured Markd
   - **TEST MODE**: Create only the first issue to verify configuration.
   - **FULL MODE**: Create all issues at once.
   - **FINIKY MODE**: Selectively choose which headers to convert to issues.
-- **Configuration Management**: Save your settings in `issuePhorge.conf` for future use.
+- **Configuration Management**: Save your settings in `issueForged.conf` for future use.
 - **Automatic Label Handling**: Fetches and displays available labels from your repository and automatically maps label names to required IDs.
 - **Customizable Issue Parameters**: Set assignees and labels for created issues.
 
@@ -31,7 +31,7 @@ issuePhorge is designed to streamline the process of converting structured Markd
 
 ## Installation
 
-1. Download the script to your local machine. You can clone the repository or download the latest `issuePhorge.py` file.
+1. Download the script to your local machine. You can clone the repository or download the latest `issueForged.py` file.
 
 ## Configuration
 
@@ -47,7 +47,7 @@ When you first run issuePhorge, you'll be prompted to configure the following se
 6. **Issue Assignee**: Default username to assign issues to.
 7. **Label Name**: Name of the label to apply to issues.
 
-All settings are saved to `issuePhorge.conf` in the same directory as the script for future use.
+All settings are saved to `issueForged.conf` in the same directory as the script for future use.
 
 ## Usage
 
@@ -81,13 +81,13 @@ You can execute the script from your terminal or command prompt:
 **MacOS / Linux:**
 
 ```
-python3 issuePhorge.py
+python3 issueForged.py
 ```
 
 **Windows:**
 
 ```
-python issuePhorge.py
+python issueForged.py
 ```
 
 ### Sample Prompt
@@ -95,7 +95,7 @@ python issuePhorge.py
 Here is a preview of the interactive terminal prompts you will see when configuring the script manually for the first time:
 
 ```
-::: issuePhorge :::
+::: issueForged :::
 
 This simple Python script converts the headers (#, ##, ###, etc.) in a GitHub-flavored markdown file into Gitea/GitHub issues. If this is your first time using issuePhorge, your selected options will create a config file for future use: Option 1 below; otherwise, choose Option 2...
 
@@ -135,8 +135,8 @@ Desired header level (1-6) [header 2 is default]:
 ## Advanced Features
 
 - **Ignoring Specific Headers**: You can specify header patterns to ignore, such as section dividers or overview sections that you don't want to convert to issues.
-- **Label Management**: issuePhorge fetches all available labels from your repository and displays them for you to choose from. You only need to provide the label name - the script automatically handles finding and using the correct label ID required by the API.
-- **Batch Processing**: When creating multiple issues, issuePhorge asks for confirmation every few issues, allowing you to monitor the creation process and stop if needed.
+- **Label Management**: issueForged fetches all available labels from your repository and displays them for you to choose from. You only need to provide the label name - the script automatically handles finding and using the correct label ID required by the API.
+- **Batch Processing**: When creating multiple issues, issueForged asks for confirmation every few issues, allowing you to monitor the creation process and stop if needed.
 
 ## Troubleshooting
 

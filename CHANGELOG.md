@@ -1,4 +1,4 @@
-# issuePhorge Changelog
+# issueForged Changelog
 
 All notable changes to this project will be documented in this file. The format is based on Keep a Changelog, and this project adheres to Semantic Versioning.
 
@@ -17,7 +17,7 @@ All notable changes to this project will be documented in this file. The format 
 ### Added
 
 - Initial Release: Core functionality to convert Markdown outline/task lists into Gitea/GitHub issues.
-- Interactive terminal configuration with persistent settings saved to `issuePhorge.conf`.
+- Interactive terminal configuration with persistent settings saved to `issueForged.conf`.
 - Automatic repository label fetching and ID mapping.
 - **TEST MODE**: Create only the first parsed issue to verify formatting and connection.
 - **FULL MODE**: Batch create all parsed issues at once with regular continuation prompts.
